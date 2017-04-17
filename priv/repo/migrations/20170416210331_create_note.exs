@@ -4,7 +4,7 @@ defmodule Notebooks.Repo.Migrations.CreateNote do
   def change do
     create table(:notes) do
       add :number, :integer
-      add :content, :string
+      add :content, :text
 
       timestamps()
     end

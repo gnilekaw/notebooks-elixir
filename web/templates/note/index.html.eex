@@ -5,7 +5,6 @@
     <tr>
       <th>Number</th>
       <th>Content</th>
-
       <th></th>
     </tr>
   </thead>
@@ -13,7 +12,7 @@
 <%= for note <- @notes do %>
     <tr>
       <td><%= note.number %></td>
-      <td><%= note.content %></td>
+      <td><%= raw note.content %></td>
 
       <td class="text-right">
         <%= link "Show", to: note_path(@conn, :show, note), class: "btn btn-default btn-xs" %>
