@@ -25,3 +25,5 @@
 </table>
 
 <%= link "New note", to: note_path(@conn, :new) %>
+
+<%= pagination_link(@conn, @rummage) %>

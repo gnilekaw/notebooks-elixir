@@ -1,5 +1,6 @@
 defmodule Notebooks.Note do
   use Notebooks.Web, :model
+  use Rummage.Ecto
 
   schema "notes" do
     field :number, :integer

@@ -1,11 +1,18 @@
 defmodule Notebooks.NoteController do
   use Notebooks.Web, :controller
+  use Rummage.Phoenix.Controller
 
   alias Notebooks.Note
 
-  def index(conn, _params) do
-    notes = Repo.all(Note)
-    render(conn, "index.html", notes: notes)
+  def index(conn, params) do
+    {query, rummage} = Note
+      |> Note.rummage(params["rummage"])
+
+    notes = Repo.all(query)
+
+    render conn, "index.html",
+      notes: notes,
+      rummage: rummage
   end
 
   def new(conn, _params) do
